@@ -1,0 +1,11 @@
+doc_id,doc_name,doc_specialty,doc_phone,doc_email,doc_address,doc_city,doc_state,doc_zipcode
+DOC0001,Dr.Aparna Desai,Family Medicine,732-910-8565,Aparna_Desai@gmail.com,123 Main St,Edison,NJ,08820
+DOC0002,Dr.William Smith,Family Medicine,908-525-4524,William_Smith@gmail.com,123 Broad St,New Brunswick,NJ,08901
+DOC0003,Dr.Gloria Lopez,Internal Medicine,609-452-2524,Gloria_Lopez@gmail.com,250 Woodbridge Ave,Edison,NJ,08817
+DOC0004,Dr.Brandon Davis,Pediatrics,732-245-6655,Brandon_Davis@verizon.net,380 Patterson Avenue,Somerset,NJ,08873
+DOC0005,Dr.Apurva Nadella,Family Medicine,732-564-5523,Apurva_Nadella@yahoo.com,300 Oak Tree Rd,Edison,NJ,08820
+DOC0006,Dr.Robert Garcia,Geriatrics,609-540-8857,Robert_Garcia@yahoo.com,21 James Street,New Brunswick,NJ,08904
+DOC0007,Dr.Michael Florez,General Surgery,609-364-2267,Michael_Florez@att.net,32 New Rd,South Brunswick,NJ,08810
+DOC0008,Dr.Lauren Sandalwood,Gynecology,732-562-2245,Lauren_Sandalwood@gmail.com,3224 US-1,Edison,NJ,08817
+DOC0009,Dr.Stewart Martin,Endodontics,910-544-6687,Stewart_Martin@gmail.com,456 Main Street,Metuchen,NJ,08840
+DOC0010,Dr.Pratap Patel,Psychiatry,732-510-8844,Pratap_Patel@gmail.com,24 Oak Tree Rd,Edison,NJ,08820

@@ -1,0 +1,13 @@
+pharmacy_id,ph_name,ph_phone,ph_email,ph_address,ph_city,ph_state,ph_zipcode,ph_open_time,ph_close_time
+ABC001,ABC Pharmacy,732-248-7911,ABC_custservice@ABC.com,8 Eden Avenue,Edison,NJ,08817,090000,210000
+ABC002,ABC Pharmacy,732-339-0672,ABC_custservice@ABC.com,1252 Stelton Rd,Piscataway,NJ,08854,090000,210000
+ABC003,ABC Pharmacy,732-651-5960,ABC_custservice@ABC.com,380 NJ-18,East Brunswick,NJ,08816,090000,210000
+ABC004,ABC Pharmacy,732-985-2348,ABC_custservice@ABC.com,81 Plainfield Ave,Edison,NJ,08817,100000,190000
+ABC005,ABC Pharmacy,732-549-3875,ABC_custservice@ABC.com,1197 Amboy Ave,Edison,NJ,08837,100000,190000
+ABC006,ABC Pharmacy,732-287-3652,ABC_custservice@ABC.com,905 New Durham Rd,Edison,NJ,08817,100000,190000
+ABC007,ABC Pharmacy,732-846-9360,ABC_custservice@ABC.com,20 Jersey Ave,New Brunswick,NJ,08901,060000,240000
+ABC008,ABC Pharmacy,732-572-3773,ABC_custservice@ABC.com,332 Raritan Avenue,Highland Park,NJ,08904,080000,213000
+ABC009,ABC Pharmacy,732-744-0705,ABC_custservice@ABC.com,10 Lincoln Highway,Edison,NJ,08820,090000,210000
+ABC010,ABC Pharmacy,732-247-2331,ABC_custservice@ABC.com,366 George Street,New Brunswick,NJ,08901,090000,210000
+ABC011,ABC Pharmacy,732-826-7690,ABC_custservice@ABC.com,76 Smith Street,Perth Amboy,NJ,08861,090000,220000
+ABC012,ABC Pharmacy,732-985-5110,ABC_custservice@ABC.com,2303 Woodbridge Ave,Edison,NJ,08817,090000,200000

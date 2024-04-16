@@ -1,0 +1,11 @@
+dm_id,dm_name,dm_contact_name,dm_phone,dm_email,dm_address,dm_city,dm_state,dm_zipcode
+BMYSQB,Bristol Myers Squibb,BMY Customer Service,609-123-1234,bmyemail@bmy.com,1 Main St,Princeton,NJ,08540
+NOVRTS,Novartis Pharma,Novartis Cust Service,862-778-8300,customer.service@novartis.com,1 Health Plaza,East Hanover,NJ,07936
+MERCK,Merck,Merk Customer Service,908-740-4000,customer_service@merck.com,2000 Galloping Hill Rd,Kenilworth,NJ,07033
+JNJCO,Johnson and Johnson,JNJ Customer Service,866-565-2873,JNJ_cust_serv@jnj.com,1 Johnson and Johnson Plaza,New Brunswick,NJ,08933
+PFIZER,Pfizer Inc,Pfizer Customer Service,212-733-2323,pfizer.cust_service@pfizer.com,100 US-206,Peapack,NJ,07934
+SANOFI,Sanofi US,Customer Service,908-981-5000,sanofi.us.custserv@sanofi.com,Corporate Dr,Bridgewater TWP,NJ,08807
+GSKCO,GSK Consumer Healthcare,GSK Customer Service,908-293-4000,GSK_custserv@gsk.com,184 Liberty Corner Rd,Warren,NJ,07059
+BAYER,Bayer Pharma,Customer Service,862-404-3000,bayer.custserv@bayer.com,100 Bayer BLVD,Whippany,NJ,07981
+ASTRAZ,Astra Zeneca,Astra Customer Service,302-286-3500,customer_service_astra@astraz.com,587 S. Old Baltimore Pike,Newark,DE,19702
+TEVAUSA,Teva Pharmaceuticals USA INC,Teva Pharma Customer Service,973-227-4294,tevacustserv@teva.com,8 Gloria Ln,Fairfield,NJ,07004

@@ -1,0 +1,372 @@
+-- Project: ABC Pharmacy Drug Dispensing and Tracking System
+-- Create database
+CREATE DATABASE IF NOT EXISTS ppms;
+USE ppms;
+
+-- CREATE TABLES:
+-- Drug Manufacturer
+CREATE TABLE ppms.drug_mfg
+(
+dm_id	CHAR(8) NOT NULL PRIMARY KEY,
+dm_name	VARCHAR(40) NOT NULL,
+dm_contact_name	VARCHAR(40),
+dm_phone	VARCHAR(15) NOT NULL,
+dm_email	VARCHAR(50) NOT NULL,
+dm_address	VARCHAR(50),
+dm_city	VARCHAR(30),
+dm_state	CHAR(2),
+dm_zipcode	CHAR(9)
+)
+;
+
+-- ABC Pharmacy
+CREATE TABLE ppms.pharmacy
+(
+pharmacy_id	CHAR(8) NOT NULL PRIMARY KEY,
+ph_name	VARCHAR(40) NOT NULL,
+ph_phone	VARCHAR(15) NOT NULL,
+ph_email	VARCHAR(50) NOT NULL,
+ph_address	VARCHAR(50),
+ph_city	VARCHAR(30),
+ph_state	CHAR(2),
+ph_zipcode	CHAR(9),
+ph_open_time	TIME,
+ph_close_time	TIME
+)
+;
+
+-- Pharmacist
+CREATE TABLE ppms.pharmacist
+(
+pharmacist_id	CHAR(8) NOT NULL PRIMARY KEY,
+pst_pharmacy_id	CHAR(8) NOT NULL,
+pst_name	VARCHAR(40) NOT NULL,
+pst_license	CHAR(20) NOT NULL,
+pst_dob	DATE NOT NULL,
+pst_phone	VARCHAR(15) NOT NULL,
+pst_email	VARCHAR(50),
+CONSTRAINT pharmacist_fk_pharmacy_id
+	FOREIGN KEY (pst_pharmacy_id) REFERENCES pharmacy (pharmacy_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Drugs
+CREATE TABLE ppms.drugs
+(
+drug_id	CHAR(8) NOT NULL,
+drug_batch_no	CHAR(8) NOT NULL,
+drug_name	VARCHAR(40) NOT NULL,
+drug_type	VARCHAR(30)	NOT NULL,
+drug_pharmacy_id CHAR(8) NOT NULL,
+drug_dm_id	CHAR(8) NOT NULL,
+dm_date	DATE,
+drug_exp_date	DATE,
+drug_dosage	VARCHAR(10),
+drug_price	DECIMAL(10,2) NOT NULL,
+drug_onhand_qty	INT DEFAULT 0,
+CONSTRAINT drugs_pk PRIMARY KEY (drug_id, drug_batch_no),
+CONSTRAINT drugs_fk_pharmacy_id
+	FOREIGN KEY (drug_pharmacy_id) REFERENCES pharmacy (pharmacy_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT drugs_fk_drug_dm_id
+	FOREIGN KEY (drug_dm_id) REFERENCES drug_mfg (dm_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Doctor
+CREATE TABLE ppms.doctor
+(
+doc_id	CHAR(8) NOT NULL PRIMARY KEY,
+doc_name	VARCHAR(40) NOT NULL,
+doc_specialty	VARCHAR(40)	NOT NULL,
+doc_phone	VARCHAR(15) NOT NULL,
+doc_email	VARCHAR(50) NOT NULL,
+doc_address	VARCHAR(50),
+doc_city	VARCHAR(30),
+doc_state	CHAR(2),
+doc_zipcode	CHAR(9)
+)
+;
+
+-- Patients
+CREATE TABLE ppms.patients
+(
+patient_id	CHAR(8) NOT NULL PRIMARY KEY,
+pt_name	VARCHAR(40) NOT NULL,
+pt_gender	CHAR(1)	NOT NULL,
+pt_dob	DATE NOT NULL,
+pt_prim_doc_id	CHAR(8) NOT NULL,
+pt_phone	VARCHAR(15) NOT NULL,
+pt_email	VARCHAR(50),
+pt_address	VARCHAR(50),
+pt_city	VARCHAR(30),
+pt_state	CHAR(2),
+pt_zipcode	CHAR(9),
+pt_med_history	VARCHAR(200),
+CONSTRAINT patients_fk_doc_id
+	FOREIGN KEY (pt_prim_doc_id) REFERENCES doctor (doc_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Prescription
+CREATE TABLE ppms.prescription
+(
+prescription_id	CHAR(10) NOT NULL PRIMARY KEY,
+prc_date	DATE NOT NULL,
+prc_patient_id	CHAR(8) NOT NULL,
+prc_doc_id	CHAR(8) NOT NULL,
+prc_diagnosis	VARCHAR(200),
+CONSTRAINT prescription_fk_patient_id
+	FOREIGN KEY (prc_patient_id) REFERENCES patients (patient_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT prescription_fk_doc_id
+	FOREIGN KEY (prc_doc_id) REFERENCES doctor (doc_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Prescription Items
+CREATE TABLE ppms.prescr_items
+(
+prescription_id	CHAR(10) NOT NULL,
+prescr_item_no	INT NOT NULL,
+pritem_drug_id	CHAR(8)	NOT NULL,
+pritem_dosage	VARCHAR(10) NOT NULL,
+pritem_period	INT NOT NULL,
+pritem_qty	INT NOT NULL,
+pritem_usage	VARCHAR(100),
+CONSTRAINT prescr_items_pk PRIMARY KEY (prescription_id, prescr_item_no),
+CONSTRAINT prescr_items_fk_prescription_id
+	FOREIGN KEY (prescription_id) REFERENCES prescription (prescription_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT prescr_items_fk_drug_id
+	FOREIGN KEY (pritem_drug_id) REFERENCES drugs (drug_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Orders
+CREATE TABLE ppms.orders
+(
+order_id	CHAR(10) NOT NULL PRIMARY KEY,
+ord_patient_id	CHAR(8) NOT NULL,
+ord_doc_id	CHAR(8) NOT NULL,
+ord_pharmacy_id	CHAR(8) NOT NULL,
+ord_pharmacist_id	CHAR(8) NOT NULL,
+ord_prescription_id	CHAR(10) NOT NULL,
+CONSTRAINT orders_fk_patient_id
+	FOREIGN KEY (ord_patient_id) REFERENCES patients (patient_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT orders_fk_doc_id
+	FOREIGN KEY (ord_doc_id) REFERENCES doctor (doc_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT orders_fk_pharmacy_id
+	FOREIGN KEY (ord_pharmacy_id) REFERENCES pharmacy (pharmacy_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT orders_fk_pharmacist_id
+	FOREIGN KEY (ord_pharmacist_id) REFERENCES pharmacist (pharmacist_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT orders_fk_prescription_id
+	FOREIGN KEY (ord_prescription_id) REFERENCES prescription (prescription_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- Order Line Items
+CREATE TABLE ppms.order_details
+(
+dtl_order_id	CHAR(10) NOT NULL,
+dtl_order_line	INT NOT NULL,
+dtl_drug_id	CHAR(8) NOT NULL,
+dtl_drug_batch_no	CHAR(8) NOT NULL,
+dtl_qty	INT NOT NULL,
+dtl_ord_date	DATE,
+dtl_ord_time	TIME,
+dtl_price	DECIMAL(9,2) NOT NULL,
+CONSTRAINT order_details_pk PRIMARY KEY (dtl_order_id, dtl_order_line),
+CONSTRAINT order_details_fk_order_id
+	FOREIGN KEY (dtl_order_id) REFERENCES orders (order_id)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE,
+CONSTRAINT order_details_fk_drug_detail
+	FOREIGN KEY (dtl_drug_id, dtl_drug_batch_no) REFERENCES drugs (drug_id, drug_batch_no)
+	ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+;
+
+-- LOADING DATA
+SET GLOBAL local_infile = 1 ;
+
+-- Load data into table drug_mfg
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_drug_manufacturer.txt"
+INTO TABLE drug_mfg
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM drug_mfg ;
+
+-- Load data into table pharmacy
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_pharmacy.txt"
+INTO TABLE pharmacy
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM pharmacy ;
+
+-- Load data into table pharmacist
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_pharmacist.txt"
+INTO TABLE pharmacist
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM pharmacist ;
+
+-- Load data into table drugs
+SELECT * FROM drug_mfg ;
+SELECT * FROM pharmacy ;
+
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_drugs.txt"
+INTO TABLE drugs
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM drugs;
+
+-- Load data into table doctors
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_doctor.txt"
+INTO TABLE doctor
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM doctor;
+
+-- Load data into table patients
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_patients.txt"
+INTO TABLE patients
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM patients;
+
+-- Load data into table prescription
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_prescription.txt"
+INTO TABLE prescription
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM prescription ;
+
+-- Load data into table prescription items
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_prescription_items.txt"
+INTO TABLE prescr_items
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM prescr_items ;
+
+-- Load data into table orders
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_orders.txt"
+INTO TABLE orders
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM orders ;
+
+-- Load data into table order_details
+LOAD DATA LOCAL INFILE
+"C:/Users/Kanna/Documents/Rutgers Grad/Healthcare Database Management/ppms_order_details.txt"
+INTO TABLE order_details
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+SELECT * FROM order_details ;
+
+-- QUERIES
+-- List of Pharmacist working in Pharmacy ABCPharm
+SELECT pharmacy_id, ph_name AS Pharmacy_Name, pst_name AS Pharmacist_Name, pst_license AS License_No, pst_phone AS Phone_No
+FROM pharmacy, pharmacist
+WHERE pharmacy_id = pst_pharmacy_id
+ORDER BY pst_name
+;
+
+-- Patients List by Primary Doctor
+SELECT doc_name AS Doctor_Name, doc_specialty AS Specialty, doc_phone AS Doctor_Phone_no, 
+		pt_name AS Patient_Name, pt_gender AS Patient_Gender, pt_dob AS DOB, pt_phone AS Patient_Phone_No
+FROM doctor, patients
+WHERE doc_id = pt_prim_doc_id
+ORDER BY doc_name, pt_name
+;
+
+-- Pharmacy Drug Supplier and On-hand Inventory 
+SELECT ph_name AS Pharmacy_Name, b.dm_name AS Drug_Supplier, drug_id, drug_batch_no AS Batch_no, drug_name, 
+		drug_type, a.dm_date AS Drug_Mfg_Date, drug_exp_date AS Expiration_Date,
+		drug_onhand_qty AS On_Hand_Qty
+FROM drugs a, drug_mfg b, pharmacy c
+WHERE a.drug_pharmacy_id = c.pharmacy_id AND b.dm_id = a.drug_dm_id
+ORDER BY b.dm_name, a.drug_type, a.drug_name
+;
+
+-- Patients Prescription by Doctor
+SELECT doc_name AS Doctor_Name, doc_specialty AS Specialty, pt_name, pt_phone AS Patient_Phone,
+		a.prescription_id, pritem_drug_id, pritem_dosage, prc_date
+FROM doctor, patients, prescription a, prescr_items b
+WHERE doc_id = prc_doc_id AND patient_id = prc_patient_id AND a.prescription_id = b.prescription_id
+ORDER BY doc_name, prc_date, pt_name
+;
+
+-- List Pharmacy Orders and extended amount by Date
+SELECT order_id, dtl_order_line, dtl_drug_id, dtl_drug_batch_no, dtl_qty, dtl_price AS Drug_Price, pt_name AS Patient_Name,
+		pt_phone AS Patient_Phone_No, pst_name AS Pharmacist_Name
+FROM orders, order_details, patients, pharmacist
+WHERE order_id = dtl_order_id AND ord_patient_id = patient_id AND ord_pharmacist_id = pharmacist_id
+ORDER BY order_id, dtl_order_line
+;
+
+-- Tracking Drug Dispense info to Patient, Doctor by Drug Mfg, Drug Name, Batch#, Mfg date, Expiration Date
+SELECT ph_name AS Pharmacy_Name, pt_name AS Patient_Name, pt_phone AS Patient_Phone, 
+        doc_name AS Doctor_Name, doc_phone AS Doctor_Phone,
+		dm_name AS Drug_Supplier, drug_id, drug_batch_no AS Batch_no, drug_name, drug_type, 
+		dm_date AS Drug_Mfg_Date, drug_exp_date AS Expiration_Date, order_id, dtl_ord_date AS Sold_Date
+FROM orders, order_details, drugs a, drug_mfg b, patients, doctor, pharmacy
+WHERE dtl_order_id = order_id AND ord_patient_id = patient_id AND ord_doc_id = doc_id
+	AND ord_pharmacy_id = pharmacy_id AND dtl_drug_id = a.drug_id AND dtl_drug_batch_no = a.drug_batch_no
+    AND a.drug_dm_id = b.dm_id
+ORDER BY dm_name, a.drug_name, dtl_ord_date, pt_name
+;
+

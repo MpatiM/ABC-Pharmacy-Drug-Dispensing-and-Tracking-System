@@ -1,0 +1,159 @@
+DRUG DETAILS
+
+Drug: Augmentin
+
+Description:Augmentin is a prescription medicine used to treat the symptoms of 
+	many different infections caused by bacteria such as lower respiratory 
+	tract infections, chronic obstructive pulmonary disease, bacterial sinusitis, 
+	animal/human bite wounds, and skin infections. Augmentin may be used alone or 
+	with other medications.
+
+Usage: Should be taken before starting meals
+	Tablets--> 1 500-mg tablet every 12 hrs OR 1 250-mg tablet every 8 hrs
+	powder for oral suspension--> 125mg/5mL in place of 500-mg tablet
+	chewable tablets--> same dosage as tablet [**should not be substituted for tablet]
+
+Sold As: Bottles of 20/carton of 20 tablets 
+
+---
+
+Drug: Lexapro
+
+Description: Prescription medicine used to treat the symptoms of major depressive disorder
+	and generalized anxiety disorder. Lexapro may be used alone or with other medications.
+	An Antidepressant. For adults and/or adolescents 12-17 
+
+Usage: Adolescents--> 10mg once daily
+	Adults--> 10mg once daily
+
+Sold As: Bottle of 100
+
+---
+
+Drug: Flagyl
+
+Description: Prescription medicine used to treat the symptoms of bacterial infections of 
+	the vagina, stomach, liver, skin, joints, brain, and respiratory tract. May be used
+	alone or with other medications.
+
+Usage: For Vaginal Infections -
+	one-day treatment--> 2 grams, given as a single dose or in two divided doses of 1 gram each, 
+			given in same day.
+	seven-day treatment--> 250-mg 3 times daily for 7 days
+	For other stomach/liver infections -
+	--> 750-mg orally 3 times daily for 5-10 days
+	Pediatric--> 35-50-mg/24hrs, divided into 3 doses, orally for 10 days
+
+Sold As: bottles of 50 and 100
+
+---
+
+Drug: Percocet
+
+Description: Prescription medicine used to treat the symptoms of acute pain and moderate-to-severe
+	pain.
+
+Usage: (Adjusted according to severity of pain)
+	Tablets--> 2.5-mg/325-mg, 2 tablets every 6 hrs. Should NOT exceed 4 grams.
+		--> 5-mg/325-mg;7.5mg/325mg;10mg/325mg, one tablet every 6 hrs. Should NOT exceed 4 grams.
+
+Sold As: Bottles of 100
+
+---
+
+Drug: Pepcid
+
+Description: Over-the-counter medicine used to treat heartburn, GERD, and 
+	Zollinger-Ellison syndrome. Available as a generic.
+
+Usage: 20mg/40mg once a day at bedtime orally
+	--> for GERD, can be stopped after 6-8 weeks
+	Pediatric patients 1-16 yrs old--> 0.5mg/kg/day orally at bedtime 
+		or divided twice up to 40mg/day
+
+Sold As: bottles of 30 or bottles of 100
+
+---
+
+Drug: Xanax
+
+Description: Prescription medicine used to treat symptoms of anxiety, panic disorder,
+	and anxiety associated with depression. May be used alone or with other medication.
+
+Usage: Oral dosage in generalized anxiety disorder--> 0.25mg/0.5mg 3 times daily
+	Dosage in panic disorder--> 0.5mg 3 times daily
+
+Sold As: bottles of 500
+
+---
+
+Drug: Tylenol
+
+Description: OTC medicine used to reduce symptoms of pain and as a fever reducer.
+
+Usage: adults/children 12+--> 2 caplets every 4-6 hrs while symptoms last. 
+			Do NOT take more than 12 caplets in 24 hrs 
+			or use for more than 10 days unless directed by physician.
+	children 6-11--> 1 caplet every 4-6 hrs while symptoms last.
+			Do NOT take more than 5 caplets in 24 hrs
+			or use for more than 5 days unless directed by physician.
+
+Sold As: 500mg each sold in bottles of 325 caplets
+
+---
+
+Drug: Claritin
+
+Description: Prescription/OTC medicine used to treat symptoms of upper respiratory allergies.
+	Is an antihistamine. Reduces symptoms of runny nose, itchy watery eyes,
+	sneezing, and itching of nose or throat.
+
+Usage: adults and children 6+--> 1 tablet daily. Not more than 1 per 24hrs. Taken orally
+
+Sold As: 10mg loratadine(active ingredient). 60 tablets per carton.
+
+---
+
+Drug: Midol
+
+Description: Prescription/OTC medicine used to relieve pain from headaches, dental pain,
+	menstrual cramps, muscle aches, or arthritis. Can also be used to reduce fever
+	and/or minor aches due to common cold or flu.
+
+Usage: 500-mg Taken orally every 4-6 hrs or 2-3 times a day with a full glass of water (8oz).
+	Do NOT lie down for at least 10 minutes after taking medicine
+	MAX 6/day.
+
+Sold As: 24 caplets per carton
+
+---
+
+Drug: Nexium
+
+Description: prescription medicine used to treat the symptoms of gastroesophageal 
+	reflux disease (GERD) and other conditions where there is excessive stomach acid 
+	such as Zollinger-Ellison syndrome. 
+	Nexium may be used alone or with other medications.
+
+Usage: 20-mg given once daily by intravenous injection
+
+Sold As: One carton containing 10 vials
+
+---
+
+Drug: 
+
+Description:
+
+Usage: 
+
+Sold As:
+
+--
+
+Vitamins:
+Calcium 500mg
+Vitamin D3  125mcg
+Omega-3 980mg
+Vitamin B-12 2500mcg
+

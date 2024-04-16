@@ -1,0 +1,2 @@
+pharmacy_id,ph_name,ph_phone,ph_email,ph_address,ph_city,ph_state,ph_zipcode,ph_open_time,ph_close_time
+ABCPHARM,ABC Pharmacy,732-247-2331,ABC_custservice@ABC.com,366 George Street,New Brunswick,NJ,08901,090000,210000

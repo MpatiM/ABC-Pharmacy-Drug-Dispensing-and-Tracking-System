@@ -1,0 +1,24 @@
+prescription_id,prescr_item_no,pritem_drug_id,pritem_dosage,pritem_period,pritem_qty,pritem_usage
+PRC0000001,001,DOTC0004,500-mg,8,24,Take 1 caplet 2-3 times a day orally with a full glass of water. Use until pain reduces or is gone.
+PRC0000001,002,DDSV0003,980-mg,130,130,Take 1 capsule per day orally.
+PRC0000002,001,DDSV0004,2500-mcg,300,300,Take 1 tablet per day. Place tablet under tongue for 30 seconds before swallowing.
+PRC0000003,001,DOTC0003,10-mg,60,60,Take 1 tablet per day orally. Do not exceed 1 tablet per day.
+PRC0000004,001,DOTC0002,500-mg,3,325,Take 1 caplet every 4-6 hrs while symptoms last. Do not exceed 5 caplets per day.
+PRC0000005,001,DDSV0001,500-mg,60,120,Take 2 tablets daily.
+PRC0000005,002,DDSV0004,2500-mcg,300,300,Take 1 tablet per day. Place tablet under tongue for 30 seconds before swallowing.
+PRC0000006,001,DPRX0006,0.5-mg,170,500,Take 1 tablet orally 3 times per day.
+PRC0000007,001,DPRX0005,325-mg,10,100,Take 2 tablets every 6 hrs.
+PRC0000007,002,DOTC0002,500-mg,10,325,Take 1 caplet every 4-6 hrs while symptoms last. Do not exceed 5 caplets per day.
+PRC0000007,003,DDSV0001,500-mg,60,120,Take 2 tablets daily.
+PRC0000008,001,DDSV0002,125-mcg,400,400,Take 1 capsule daily preferably with a meal.
+PRC0000009,001,DPRX0002,10-mg,100,100,Take 1 tablet daily.
+PRC0000010,001,DOTC0004,500-mg,8,24,Take 1 caplet 2-3 times a day orally with a full glass of water.
+PRC0000011,001,DOTC0003,10-mg,60,60,Take 1 tablet per day orally. Do not exceed 1 tablet per day.
+PRC0000011,002,DDSV0002,125-mcg,400,400,Take 1 capsule daily preferably with a meal.
+PRC0000012,001,DOTC0004,500-mg,8,24,Take 1 caplet 2-3 times a day orally with a full glass of water.
+PRC0000013,001,DOTC0002,500-mg,10,325,Take 1 caplet every 4-6 hrs while symptoms last. Do not exceed 5 caplets per day.
+PRC0000014,001,DDSV0002,125-mcg,400,400,Take 1 capsule daily preferably with a meal.
+PRC0000014,002,DDSV0003,980-mg,130,130,Take 1 capsule per day orally.
+PRC0000014,003,DDSV0004,2500-mcg,300,300,Take 1 tablet per day. Place tablet under tongue for 30 seconds before swallowing.
+PRC0000015,001,DPRX0001,500-mg,10,20,Take 1 tablet every 12 hrs.
+PRC0000015,002,DOTC0003,10-mg,10,60,Take 1 tablet per day orally. Do not exceed 1 tablet per day.
